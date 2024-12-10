@@ -8,7 +8,7 @@ chat_handler = MoondreamChatHandler.from_pretrained(
     filename="*mmproj*",
 )
 
-model_name = "eybro/model2"
+model_name = "volumetrader/model"
 
 llm = Llama.from_pretrained(
     repo_id=model_name,
