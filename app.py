@@ -8,8 +8,10 @@ chat_handler = MoondreamChatHandler.from_pretrained(
     filename="*mmproj*",
 )
 
+model_name = "eybro/model2"
+
 llm = Llama.from_pretrained(
-    repo_id="volumetrader/model",
+    repo_id=model_name,
     filename="unsloth.Q4_K_M.gguf",
     chat_handler=chat_handler,
     n_ctx=2048,
@@ -18,7 +20,7 @@ llm = Llama.from_pretrained(
 """
 For more information on `huggingface_hub` Inference API support, please check the docs: https://huggingface.co/docs/huggingface_hub/v0.22.2/en/guides/inference
 """
-client = InferenceClient("volumetrader/model")
+client = InferenceClient(model_name)
 
 
 def respond(
